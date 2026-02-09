@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial project setup with Standard JavaScript structure\n\n- Created Standard project structure with src/main/js/ organization\n- Added CLAUDE.md with development rules and compliance checks\n- Added README.md with project overview and guidelines\n- Configured .gitignore for Node.js/JavaScript projects\n- Set up entry point at src/main/js/index.js\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git config:*)",
+      "Bash(gh:*)",
+      "Bash(gh auth:*)"
+    ]
+  }
+}
