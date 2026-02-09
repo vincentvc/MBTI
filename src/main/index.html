@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBTI Personality Quiz</title>
+  <meta name="description" content="Discover your MBTI personality type with our professional 72-question quiz. Get detailed cognitive function analysis, career recommendations, and relationship insights.">
+  <link rel="stylesheet" href="resources/assets/styles.css">
+  <style>
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with Language Selector -->
+  <header class="header">
+    <div class="lang-selector">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="zh-TW">繁體</button>
+      <button class="lang-btn" data-lang="zh-CN">简体</button>
+    </div>
+  </header>
+
+  <!-- ===== LANDING PAGE ===== -->
+  <section id="view-landing" class="landing">
+    <div class="landing-icon">🧠</div>
+    <h1><span class="text-gradient" data-i18n="title">MBTI Personality Quiz</span></h1>
+    <p class="subtitle" data-i18n="description">
+      Answer a series of questions to uncover your MBTI personality type and gain insight into how you think, feel, and interact with the world.
+    </p>
+
+    <div class="features">
+      <div class="feature-item">
+        <div class="icon">📋</div>
+        <div class="label" data-i18n="features72">72 Scientifically-Designed Questions</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🎯</div>
+        <div class="label" data-i18n="features16">16 Personality Types</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">📊</div>
+        <div class="label" data-i18n="featuresReport">Professional Report with Charts</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🌐</div>
+        <div class="label" data-i18n="featuresLang">Trilingual Support</div>
+      </div>
+    </div>
+
+    <button id="btn-start" class="btn btn-primary btn-lg" data-i18n="startButton">
+      Start the Quiz
+    </button>
+
+    <p style="margin-top:32px;font-size:13px;color:var(--text-muted)" data-i18n="disclaimer">
+      This quiz is for entertainment and self-discovery purposes only. It is not a clinical assessment.
+    </p>
+  </section>
+
+  <!-- ===== QUIZ VIEW ===== -->
+  <section id="view-quiz" class="quiz-container hidden">
+    <div class="progress-wrapper">
+      <div class="progress-text">
+        <span id="progress-text">0%</span>
+        <span id="question-counter">1 / 72</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="card">
+        <div class="question-number" id="q-number">Question 1</div>
+        <div class="question-text" id="q-text"></div>
+        <div class="likert-scale" id="likert-scale"></div>
+      </div>
+    </div>
+
+    <div class="quiz-nav">
+      <button id="btn-back" class="btn btn-secondary hidden" data-i18n="back">Back</button>
+      <button id="btn-next" class="btn btn-primary" data-i18n="next">Next</button>
+    </div>
+  </section>
+
+  <!-- ===== FREE RESULTS VIEW ===== -->
+  <section id="view-results" class="results-container hidden">
+    <div class="container">
+      <div class="results-header fade-in">
+        <div class="results-type text-gradient" id="result-type"></div>
+        <div class="results-name" id="result-name"></div>
+        <p class="results-description" id="result-description"></p>
+      </div>
+
+      <div class="dimension-bars" id="dimension-bars"></div>
+
+      <!-- Teaser for full report -->
+      <div class="teaser-section">
+        <div class="teaser-preview">
+          <div class="teaser-items">
+            <div class="teaser-item">
+              <div class="icon">🧩</div>
+              <div class="label" data-i18n="cognitiveFunction">Cognitive Functions</div>
+            </div>
+            <div class="teaser-item">
+              <div class="icon">💼</div>
+              <div class="label" data-i18n="careerRecommendations">Career Recommendations</div>
+            </div>
+            <div class="teaser-item">
+              <div class="icon">❤️</div>
+              <div class="label" data-i18n="relationshipInsights">Relationship Insights</div>
+            </div>
+            <div class="teaser-item">
+              <div class="icon">🌱</div>
+              <div class="label" data-i18n="personalGrowth">Personal Growth</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-tag text-gradient" data-i18n="price">HK$66</div>
+        <p class="price-subtitle" data-i18n="reportTeaser">
+          Get a comprehensive analysis of your cognitive functions, career paths, relationships, and personal growth strategies.
+        </p>
+
+        <button id="btn-unlock" class="btn btn-primary btn-lg" data-i18n="unlockReport">
+          Unlock Full Report
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FULL REPORT VIEW ===== -->
+  <section id="view-report" class="report-container hidden">
+    <div id="report-content"></div>
+  </section>
+
+  <!-- ===== PAYMENT MODAL ===== -->
+  <div id="payment-modal" class="modal-overlay">
+    <div class="modal">
+      <h2 data-i18n="paymentTitle">Unlock Your Full Report</h2>
+      <div class="price-display">HK$66</div>
+      <p class="modal-desc" data-i18n="paymentDescription">
+        One-time payment for your complete MBTI personality report with in-depth analysis.
+      </p>
+
+      <div id="payment-form-area">
+        <div class="payment-options">
+          <button id="btn-apple-pay" class="btn-apple-pay hidden">
+            &#63743; Apple Pay
+          </button>
+          <button id="btn-google-pay" class="btn-google-pay hidden">
+            Google Pay
+          </button>
+        </div>
+
+        <div class="payment-divider" data-i18n="cardPayment">Credit / Debit Card</div>
+
+        <form id="card-form" class="card-form">
+          <div class="form-group">
+            <label data-i18n="cardPayment">Card Number</label>
+            <input type="text" id="card-number" class="form-input" placeholder="4242 4242 4242 4242" maxlength="19" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>MM/YY</label>
+              <input type="text" id="card-expiry" class="form-input" placeholder="12/28" maxlength="5" required>
+            </div>
+            <div class="form-group">
+              <label>CVC</label>
+              <input type="text" id="card-cvc" class="form-input" placeholder="123" maxlength="4" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%" data-i18n="payNow">Pay Now</button>
+        </form>
+      </div>
+
+      <button id="modal-close" class="modal-close" data-i18n="cancel">Cancel</button>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+  <!-- Stripe (optional - demo works without it) -->
+  <script src="https://js.stripe.com/v3/" async></script>
+
+  <!-- App Modules (order matters) -->
+  <script src="js/core/i18n.js"></script>
+  <script src="js/core/questions.js"></script>
+  <script src="js/core/types.js"></script>
+  <script src="js/core/scoring.js"></script>
+  <script src="js/core/report.js"></script>
+  <script src="js/core/payment.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
