@@ -342,4 +342,9 @@
     getLanguage: getLanguage,
     t: t
   };
+
+  // Convenience aliases on MBTI namespace for direct access
+  window.MBTI.t = t;
+  window.MBTI.getLanguage = getLanguage;
+  window.MBTI.setLanguage = setLanguage;
 })();
