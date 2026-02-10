@@ -87,6 +87,35 @@
       featuresReport: 'Professional Report with Charts',
       featuresLang: 'Trilingual Support',
 
+      // Landing page - enhanced
+      socialProof: '85%+ users report improved self-understanding',
+      whatYouDiscover: "What You'll Discover",
+      discoverPersonality: 'Personality Analysis',
+      discoverPersonalityDesc: 'Deep dive into your cognitive functions',
+      discoverRelationships: 'Relationships',
+      discoverRelationshipsDesc: 'Understand your relationship patterns',
+      discoverCommunication: 'Communication',
+      discoverCommunicationDesc: 'Your unique communication style',
+      discoverCareer: 'Career Paths',
+      discoverCareerDesc: 'Ideal career recommendations',
+      discoverGrowth: 'Personal Growth',
+      discoverGrowthDesc: 'Actionable growth strategies',
+      discoverBlindSpots: 'Blind Spots',
+      discoverBlindSpotsDesc: 'Uncover your hidden blind spots',
+      howItWorks: 'How It Works',
+      step1Label: 'Take the Quiz',
+      step1Desc: 'Answer 72 carefully designed questions',
+      step2Label: 'Get Your Type',
+      step2Desc: 'Discover your personality type instantly',
+      step3Label: 'Read Your Report',
+      step3Desc: 'Unlock a comprehensive personality report',
+
+      // New report sections
+      communicationStyle: 'Communication Style',
+      relationshipDeepDive: 'Relationship Patterns',
+      blindSpots: 'Blind Spots',
+      relationshipAdvice: 'Relationship Advice',
+
       // Footer / misc
       disclaimer: 'This quiz is for entertainment and self-discovery purposes only. It is not a clinical assessment.',
       copyright: '\u00A9 2026 MBTI Personality Quiz. All rights reserved.',
@@ -169,6 +198,35 @@
       featuresReport: '專業圖表報告',
       featuresLang: '三語支援',
 
+      // Landing page - enhanced
+      socialProof: '85% 以上用戶表示更了解自己',
+      whatYouDiscover: '你將發現',
+      discoverPersonality: '人格分析',
+      discoverPersonalityDesc: '深入了解你的認知功能',
+      discoverRelationships: '人際關係',
+      discoverRelationshipsDesc: '了解你的關係模式',
+      discoverCommunication: '溝通風格',
+      discoverCommunicationDesc: '你獨特的溝通方式',
+      discoverCareer: '職業道路',
+      discoverCareerDesc: '理想的職業推薦',
+      discoverGrowth: '個人成長',
+      discoverGrowthDesc: '可執行的成長策略',
+      discoverBlindSpots: '盲點',
+      discoverBlindSpotsDesc: '發現你的隱藏盲點',
+      howItWorks: '如何進行',
+      step1Label: '參加測驗',
+      step1Desc: '回答 72 道精心設計的問題',
+      step2Label: '獲得類型',
+      step2Desc: '立即發現你的人格類型',
+      step3Label: '閱讀報告',
+      step3Desc: '解鎖全面的人格報告',
+
+      // New report sections
+      communicationStyle: '溝通風格',
+      relationshipDeepDive: '人際關係模式',
+      blindSpots: '盲點',
+      relationshipAdvice: '關係建議',
+
       // Footer / misc
       disclaimer: '此測驗僅供娛樂和自我探索之用，並非臨床評估。',
       copyright: '© 2026 MBTI 人格測驗。保留所有權利。',
@@ -250,6 +308,35 @@
       features16: '16 种人格类型',
       featuresReport: '专业图表报告',
       featuresLang: '三语支持',
+
+      // Landing page - enhanced
+      socialProof: '85% 以上用户表示更了解自己',
+      whatYouDiscover: '你将发现',
+      discoverPersonality: '人格分析',
+      discoverPersonalityDesc: '深入了解你的认知功能',
+      discoverRelationships: '人际关系',
+      discoverRelationshipsDesc: '了解你的关系模式',
+      discoverCommunication: '沟通风格',
+      discoverCommunicationDesc: '你独特的沟通方式',
+      discoverCareer: '职业道路',
+      discoverCareerDesc: '理想的职业推荐',
+      discoverGrowth: '个人成长',
+      discoverGrowthDesc: '可执行的成长策略',
+      discoverBlindSpots: '盲点',
+      discoverBlindSpotsDesc: '发现你的隐藏盲点',
+      howItWorks: '如何进行',
+      step1Label: '参加测验',
+      step1Desc: '回答 72 道精心设计的问题',
+      step2Label: '获得类型',
+      step2Desc: '立即发现你的人格类型',
+      step3Label: '阅读报告',
+      step3Desc: '解锁全面的人格报告',
+
+      // New report sections
+      communicationStyle: '沟通风格',
+      relationshipDeepDive: '人际关系模式',
+      blindSpots: '盲点',
+      relationshipAdvice: '关系建议',
 
       // Footer / misc
       disclaimer: '此测验仅供娱乐和自我探索之用，并非临床评估。',

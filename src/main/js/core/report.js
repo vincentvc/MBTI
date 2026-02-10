@@ -87,11 +87,17 @@
     // Strengths & Weaknesses
     renderStrengthsWeaknesses(container, report, lang);
 
+    // Blind Spots (NEW)
+    renderBlindSpots(container, report, lang);
+
+    // Communication Style (NEW)
+    renderCommunicationStyle(container, report, lang);
+
     // Career Recommendations
     renderCareers(container, report, lang);
 
-    // Relationship Compatibility
-    renderCompatibility(container, report, lang);
+    // Relationship Deep Dive (NEW - replaces basic compatibility)
+    renderRelationshipDeepDive(container, report, lang);
 
     // Famous People
     renderFamousPeople(container, report, lang);
@@ -160,6 +166,56 @@
     container.appendChild(section);
   }
 
+  function renderBlindSpots(container, report, lang) {
+    if (!report.blindSpots || !report.blindSpots[lang]) return;
+
+    var section = document.createElement('div');
+    section.className = 'report-section';
+
+    var itemsHtml = report.blindSpots[lang].map(function(item) {
+      return '<li>' + item + '</li>';
+    }).join('');
+
+    section.innerHTML =
+      '<h2>' + window.MBTI.t('blindSpots') + '</h2>' +
+      '<ul class="report-list blind-spots">' + itemsHtml + '</ul>';
+    container.appendChild(section);
+  }
+
+  function renderCommunicationStyle(container, report, lang) {
+    if (!report.communicationStyle || !report.communicationStyle[lang]) return;
+
+    var section = document.createElement('div');
+    section.className = 'report-section report-section-gradient';
+
+    section.innerHTML =
+      '<h2>' + window.MBTI.t('communicationStyle') + '</h2>' +
+      '<div class="communication-card"><p>' + report.communicationStyle[lang] + '</p></div>';
+    container.appendChild(section);
+  }
+
+  function renderRelationshipDeepDive(container, report, lang) {
+    if (!report.relationshipDeepDive || !report.relationshipDeepDive[lang]) return;
+
+    var section = document.createElement('div');
+    section.className = 'report-section report-section-gradient';
+
+    var badgesHtml = report.compatibility.map(function(type) {
+      return '<span class="compat-badge">' + type + '</span>';
+    }).join('');
+
+    section.innerHTML =
+      '<h2>' + window.MBTI.t('relationshipDeepDive') + '</h2>' +
+      '<div class="relationship-content">' + report.relationshipDeepDive[lang] + '</div>' +
+      '<h3>' + window.MBTI.t('compatibleTypes') + '</h3>' +
+      '<div class="compatibility-grid" style="margin-bottom:24px">' + badgesHtml + '</div>' +
+      '<div class="relationship-advice">' +
+        '<h3>' + window.MBTI.t('relationshipAdvice') + '</h3>' +
+        '<p>' + report.growth[lang] + '</p>' +
+      '</div>';
+    container.appendChild(section);
+  }
+
   function renderCareers(container, report, lang) {
     var section = document.createElement('div');
     section.className = 'report-section';
@@ -171,22 +227,6 @@
     section.innerHTML =
       '<h2>' + window.MBTI.t('careerRecommendations') + '</h2>' +
       '<ul class="report-list careers">' + careersHtml + '</ul>';
-    container.appendChild(section);
-  }
-
-  function renderCompatibility(container, report, lang) {
-    var section = document.createElement('div');
-    section.className = 'report-section';
-
-    var badgesHtml = report.compatibility.map(function(type) {
-      return '<span class="compat-badge">' + type + '</span>';
-    }).join('');
-
-    section.innerHTML =
-      '<h2>' + window.MBTI.t('relationshipInsights') + '</h2>' +
-      '<p style="color:var(--text-secondary);margin-bottom:16px">' +
-        window.MBTI.t('compatibleTypes') + '</p>' +
-      '<div class="compatibility-grid">' + badgesHtml + '</div>';
     container.appendChild(section);
   }
 

@@ -158,7 +158,10 @@
       compatibility: typeData.compatibility,
       cognitiveStack: typeData.cognitiveStack,
       famousPeople: typeData.famousPeople,
-      growth: typeData.growth
+      growth: typeData.growth,
+      communicationStyle: typeData.communicationStyle,
+      relationshipDeepDive: typeData.relationshipDeepDive,
+      blindSpots: typeData.blindSpots
     };
   };
 })();
