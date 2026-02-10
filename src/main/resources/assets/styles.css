@@ -1,15 +1,17 @@
 /* ===== CSS Variables ===== */
 :root {
-  --primary: #6C63FF;
-  --primary-dark: #5A52D5;
-  --primary-light: #8B83FF;
-  --secondary: #A78BFA;
+  --primary: #4F46E5;
+  --primary-dark: #4338CA;
+  --primary-light: #818CF8;
+  --secondary: #14B8A6;
+  --secondary-light: #2DD4BF;
   --accent: #F472B6;
-  --bg-dark: #0F0B2E;
-  --bg-card: rgba(255, 255, 255, 0.08);
-  --bg-card-solid: #1A1545;
-  --glass: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.15);
+  --accent-warm: #FB923C;
+  --bg-dark: #0C0A1D;
+  --bg-card: rgba(255, 255, 255, 0.06);
+  --bg-card-solid: #161336;
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
   --text-primary: #F8FAFC;
   --text-secondary: #CBD5E1;
   --text-muted: #94A3B8;
@@ -18,7 +20,9 @@
   --error: #F87171;
   --radius: 16px;
   --radius-sm: 8px;
-  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --radius-lg: 24px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.4);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -31,9 +35,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans TC', 'Noto Sans SC', sans-serif;
   background: var(--bg-dark);
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(108, 99, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(167, 139, 250, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(244, 114, 182, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, rgba(79, 70, 229, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(20, 184, 166, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(244, 114, 182, 0.06) 0%, transparent 50%);
   color: var(--text-primary);
   min-height: 100vh;
   line-height: 1.6;
@@ -45,7 +49,7 @@ body {
 .hidden { display: none !important; }
 .text-center { text-align: center; }
 .text-gradient {
-  background: linear-gradient(135deg, var(--primary-light), var(--accent));
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -186,14 +190,14 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: white;
-  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(108, 99, 255, 0.5);
+  box-shadow: 0 6px 28px rgba(79, 70, 229, 0.5);
 }
 
 .btn-primary:active { transform: translateY(0); }
@@ -334,12 +338,12 @@ body {
 }
 
 .likert-option:hover {
-  background: rgba(108, 99, 255, 0.1);
+  background: rgba(79, 70, 229, 0.1);
   border-color: var(--primary-light);
 }
 
 .likert-option.selected {
-  background: rgba(108, 99, 255, 0.2);
+  background: rgba(79, 70, 229, 0.2);
   border-color: var(--primary);
 }
 
@@ -620,7 +624,7 @@ body {
 .form-input:focus {
   outline: none;
   border-color: var(--primary);
-  background: rgba(108, 99, 255, 0.08);
+  background: rgba(79, 70, 229, 0.08);
 }
 
 .form-row {
@@ -750,7 +754,7 @@ body {
 
 .famous-badge {
   padding: 8px 16px;
-  background: rgba(108, 99, 255, 0.15);
+  background: rgba(79, 70, 229, 0.15);
   border-radius: var(--radius-sm);
   font-size: 14px;
 }
@@ -822,16 +826,219 @@ body {
   .question-card .card { padding: 28px 20px; }
   .modal { padding: 28px 20px; }
   .landing .features { grid-template-columns: 1fr 1fr; }
+  .discover-grid { grid-template-columns: 1fr 1fr; }
+  .steps-row { flex-direction: column; gap: 8px; }
   .chart-row { grid-template-columns: 1fr; }
   .quiz-nav { flex-direction: column-reverse; }
   .quiz-nav .btn { width: 100%; }
   .report-actions { flex-direction: column; }
   .report-actions .btn { width: 100%; }
+  .report-section-gradient { padding: 20px 16px; }
 }
 
 @media (max-width: 380px) {
   .landing .features { grid-template-columns: 1fr; }
+  .discover-grid { grid-template-columns: 1fr; }
   .lang-btn { padding: 6px 10px; font-size: 12px; }
+}
+
+/* ===== Landing Page - Enhanced Sections ===== */
+.landing-hero {
+  margin-bottom: 48px;
+}
+
+.landing-social-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(20, 184, 166, 0.1);
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  border-radius: 50px;
+  font-size: 14px;
+  color: var(--secondary-light);
+  margin-bottom: 24px;
+}
+
+.landing-social-proof .icon { font-size: 16px; }
+
+.discover-section {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  width: 100%;
+}
+
+.discover-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.discover-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 24px 16px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.discover-card:hover {
+  border-color: rgba(79, 70, 229, 0.3);
+  transform: translateY(-2px);
+}
+
+.discover-card .icon { font-size: 32px; margin-bottom: 12px; }
+.discover-card .label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.discover-card .desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.how-it-works {
+  max-width: 640px;
+  margin: 0 auto 48px;
+  width: 100%;
+}
+
+.how-it-works h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.steps-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.step-item {
+  flex: 1;
+  text-align: center;
+  padding: 20px 12px;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.step-item .label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.step-item .desc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ===== Report - New Sections ===== */
+.report-section-gradient {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(20, 184, 166, 0.05));
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 48px;
+}
+
+.report-section-gradient h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.report-section-gradient h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--primary-light);
+}
+
+/* Communication Style */
+.communication-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.communication-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* Blind Spots */
+.report-list.blind-spots li {
+  border-left-color: var(--warning);
+  background: rgba(251, 191, 36, 0.05);
+}
+
+/* Relationship Deep Dive */
+.relationship-content {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  padding: 24px;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--secondary);
+  margin-bottom: 24px;
+}
+
+.relationship-advice {
+  padding: 20px 24px;
+  background: rgba(20, 184, 166, 0.08);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--secondary);
+}
+
+.relationship-advice h3 {
+  color: var(--secondary-light) !important;
+  margin-bottom: 8px;
+}
+
+.relationship-advice p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Section Divider */
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+  margin: 0 auto 48px;
 }
 
 /* ===== Print Styles ===== */
@@ -849,7 +1056,9 @@ body {
     max-width: 100%;
   }
 
-  .card, .chart-container, .report-list li, .growth-text {
+  .card, .chart-container, .report-list li, .growth-text,
+  .communication-card, .relationship-content, .relationship-advice,
+  .report-section-gradient {
     background: #f8f8f8;
     border-color: #ddd;
     backdrop-filter: none;
