@@ -296,10 +296,10 @@
         datasets: [{
           label: report.type,
           data: data,
-          backgroundColor: 'rgba(108, 99, 255, 0.2)',
-          borderColor: '#6C63FF',
+          backgroundColor: 'rgba(79, 70, 229, 0.2)',
+          borderColor: '#4F46E5',
           borderWidth: 2,
-          pointBackgroundColor: '#8B83FF',
+          pointBackgroundColor: '#818CF8',
           pointBorderColor: '#fff',
           pointRadius: 4
         }]
@@ -346,8 +346,8 @@
           {
             label: labels.map(function(l) { return l.split(' vs ')[0]; }),
             data: dataFirst,
-            backgroundColor: 'rgba(108, 99, 255, 0.7)',
-            borderColor: '#6C63FF',
+            backgroundColor: 'rgba(79, 70, 229, 0.7)',
+            borderColor: '#4F46E5',
             borderWidth: 1,
             borderRadius: 4
           },
@@ -393,8 +393,8 @@
           labels: [p.first.letter, p.second.letter],
           datasets: [{
             data: [p.first.percentage, p.second.percentage],
-            backgroundColor: ['rgba(108, 99, 255, 0.8)', 'rgba(244, 114, 182, 0.8)'],
-            borderColor: ['#6C63FF', '#F472B6'],
+            backgroundColor: ['rgba(79, 70, 229, 0.8)', 'rgba(244, 114, 182, 0.8)'],
+            borderColor: ['#4F46E5', '#F472B6'],
             borderWidth: 2
           }]
         },
